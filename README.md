@@ -1,138 +1,141 @@
-# JobMatch — Job Recommendation System
+# Job Recommendation System
+
+An end-to-end machine learning project that recommends relevant job opportunities based on a user's skills.
+
+## Live Demo
+
+- **Streamlit App:** https://job-recommendation-system-hwbdik4kt3wezsnqhu8dpg.streamlit.app/
+- **FastAPI Backend:** https://job-recommendation-api-w6oe.onrender.com
+- **API Documentation:** https://job-recommendation-api-w6oe.onrender.com/docs
 
 ## Overview
 
-JobMatch is a content-based job recommendation system that ranks job opportunities according to a user's skills and the relevance of job titles, categories, and descriptions.
-
-The project combines TF-IDF text similarity, skill matching, and title relevance to generate personalized job recommendations.
+The Job Recommendation System helps users discover relevant job opportunities by entering their skills. It processes the input and ranks jobs based on skill relevance using a TF-IDF-based recommendation approach.
 
 ## Features
 
 - Skill-based job recommendations
-- TF-IDF text vectorization with unigrams and bigrams
-- Hybrid recommendation scoring
-- Matched-skill display and recommendation scores
-- FastAPI REST API
-- Streamlit web interface
-- Automated tests for the recommendation engine and API
-- Manual relevance evaluation using Precision@5
+- Ranked job results
+- Recommendation scores
+- Skill coverage and matched-skill information
+- Job descriptions displayed with recommendations
+- FastAPI backend for serving recommendations
+- Streamlit interface for user interaction
 
-## Technology Stack
+## Tech Stack
 
-- Python
-- Pandas and NumPy
-- Scikit-learn
-- FastAPI and Uvicorn
-- Streamlit
-- Pytest
+- **Language:** Python
+- **Data Processing:** Pandas, NumPy
+- **Machine Learning:** Scikit-learn, TF-IDF
+- **Backend:** FastAPI, Uvicorn
+- **Frontend:** Streamlit
+- **Testing:** Pytest
+- **Version Control:** Git and GitHub
 
-## Recommendation Method
+## Machine Learning Approach
 
-The recommender uses a weighted combination of:
-
-- Text similarity: 35%
-- Skill coverage: 45%
-- Job-title relevance: 20%
-
-**Final score = 0.35 × text similarity + 0.45 × skill coverage + 0.20 × title relevance**
-
-These weights are the current implementation's chosen settings, not values proven to be optimal.
-
-## Dataset
-
-The project uses the `batuhanmtl/job-skill-set` dataset from Hugging Face.
-
-The data includes job titles, categories, descriptions, and skill sets. Refer to the original dataset's license and terms before redistributing it.
+1. Load and preprocess job data.
+2. Convert job-related text into numerical representations using TF-IDF.
+3. Compare user-provided skills with job information.
+4. Rank job opportunities by relevance.
+5. Return recommendations through the FastAPI backend.
+6. Display the results in the Streamlit frontend.
 
 ## Project Structure
 
 ```text
-api/          FastAPI application
-app/          Streamlit frontend
-data/         Raw and processed datasets
-evaluation/   Evaluation scripts and results
-models/       Saved TF-IDF artifacts
-notebooks/   Data exploration and model development
-src/          Recommendation engine
-tests/        Automated tests
+job-recommendation-system/
+├── api/
+│   └── main.py
+├── app/
+│   └── streamlit_app.py
+├── data/
+│   ├── raw/
+│   └── processed/
+├── evaluation/
+├── models/
+├── notebooks/
+├── src/
+│   └── recommender.py
+├── tests/
+├── requirements.txt
+└── README.md
 ```
 
 ## Run Locally
 
-### 1. Create and activate a virtual environment
+### 1. Clone the repository
 
-Windows CMD:
+```bash
+git clone https://github.com/hemantsinghg6268/job-recommendation-system.git
+cd job-recommendation-system
+```
+
+### 2. Create and activate a virtual environment
+
+**Windows CMD:**
 
 ```cmd
 python -m venv venv
-venv\Scripts\activate.bat
+venv\Scripts\activate
 ```
 
-### 2. Install dependencies
+### 3. Install dependencies
 
 ```cmd
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-### 3. Start the API
+### 4. Start the FastAPI backend
+
+Open one terminal and run:
 
 ```cmd
-python -m uvicorn api.main:app --reload
+uvicorn api.main:app --reload
 ```
 
 API documentation: http://127.0.0.1:8000/docs
 
-### 4. Start the frontend
+### 5. Start the Streamlit frontend
 
-Open a second CMD window, activate the same virtual environment, navigate to the project folder, and run:
+Open another terminal in the project directory and run:
 
 ```cmd
-python -m streamlit run app/streamlit_app.py
+python -m streamlit run app\streamlit_app.py
 ```
 
-Open the local URL shown in the terminal, normally http://localhost:8501.
+If you use a custom API URL, configure the `API_URL` environment variable or your Streamlit Cloud secrets as appropriate.
 
-### 5. Run automated tests
+## API Endpoint
+
+**POST** `/recommend`
+
+Accepts user skills and a requested number of recommendations. See the interactive API documentation at `/docs` for the request schema and response format.
+
+## Testing
+
+Run the test suite:
 
 ```cmd
 python -m pytest tests -v
 ```
 
-## Evaluation
+## Dataset and Attribution
 
-The current manual evaluation uses five test queries and human-assigned relevance labels. The observed macro-average Precision@5 was 0.96 on that small evaluation set.
+The project uses job-skill data derived from the `batuhanmtl/job-skill-set` dataset on Hugging Face. The original dataset source is the [LinkedIn Job Postings dataset on Kaggle](https://www.kaggle.com/datasets/arshkon/linkedin-job-postings) by Arsh Koneru.
 
-This result is preliminary and does not represent 96% accuracy or guarantee performance on unseen users and queries. A larger, more representative evaluation is needed.
-
-## Limitations
-
-- Recommendations depend on the dataset's available jobs and skills.
-- Skill matching uses normalized skill names and configured aliases.
-- Job-title relevance is based on heuristics rather than a trained classifier.
-- Evaluation labels are manually assigned, and the current sample is small.
+Refer to the repository's dataset attribution and licensing information for the applicable terms.
 
 ## Future Improvements
 
-- Add job-category filters and richer search controls.
-- Expand the evaluation dataset and test more user profiles.
-- Add filters for experience level, location, and job type when reliable data is available.
-- Deploy the application so users can access it online.
-
-## Dataset and License
-
-This project uses the [LinkedIn Job Postings dataset](https://www.kaggle.com/datasets/arshkon/linkedin-job-postings), created by Arsh Koneru.
-
-**Dataset license:** [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
-
-The dataset was cleaned and processed for use in this Job Recommendation System. Changes include data cleaning and preprocessing for the recommendation pipeline.
-
-The original dataset is attributed to its creator. The processed dataset, to the extent it constitutes adapted material covered by the original license, is distributed under CC BY-SA 4.0.
-
-This project is an independent portfolio project and is not affiliated with or endorsed by the dataset creator or LinkedIn.
+- Evaluate recommendation quality with suitable ranking metrics.
+- Improve matching for related skills and synonyms.
+- Add filters for job title, location, and experience level.
+- Expand the dataset and improve data quality.
 
 ## Author
 
-Hemant Singh Ghosi
+**Hemant Singh Ghosi**
 
 - LinkedIn: https://www.linkedin.com/in/hemant-singh-394095386/
-- GitHub: https://github.com/hemantsinghg6268
+- GitHub: [@hemantsinghg6268](https://github.com/hemantsinghg6268)
