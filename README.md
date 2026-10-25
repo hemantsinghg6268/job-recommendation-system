@@ -118,6 +118,18 @@ This result is preliminary and does not represent 96% accuracy or guarantee perf
 - Add filters for experience level, location, and job type when reliable data is available.
 - Deploy the application so users can access it online.
 
+## Dataset and License
+
+This project uses the [LinkedIn Job Postings dataset](https://www.kaggle.com/datasets/arshkon/linkedin-job-postings), created by Arsh Koneru.
+
+**Dataset license:** [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+
+The dataset was cleaned and processed for use in this Job Recommendation System. Changes include data cleaning and preprocessing for the recommendation pipeline.
+
+The original dataset is attributed to its creator. The processed dataset, to the extent it constitutes adapted material covered by the original license, is distributed under CC BY-SA 4.0.
+
+This project is an independent portfolio project and is not affiliated with or endorsed by the dataset creator or LinkedIn.
+
 ## Author
 
 Hemant Singh Ghosi
