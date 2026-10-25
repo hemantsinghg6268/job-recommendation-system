@@ -1,0 +1,6 @@
+query,results_evaluated,relevant_results,precision_at_5
+"Python, ETL, SQL, data engineering",5,5,1.0
+"Python, SQL, pandas, machine learning",5,5,1.0
+"Python, machine learning, NLP, natural language processing",5,4,0.8
+"Python, scikit-learn, data science, statistics",5,5,1.0
+"SQL, Power BI, Excel, data analysis",5,5,1.0

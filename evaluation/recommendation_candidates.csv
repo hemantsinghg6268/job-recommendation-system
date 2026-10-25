@@ -1,0 +1,26 @@
+query,rank,job_id,job_title,matched_skills,final_score,relevant
+"Python, SQL, pandas, machine learning",1,3906246896,Lead Software Engineer - Finance (Hybrid),"machine learning, python, sql",0.6420289660021203,1
+"Python, SQL, pandas, machine learning",2,3901998589,"VP / Client, Finance & Strategy Data Scientist Lead – JPM Private Client","machine learning, python, sql",0.6193002535218999,1
+"Python, SQL, pandas, machine learning",3,3904956273,Staff Data Engineer - People & Finance Tech (Remote),"python, sql",0.45727143293119776,1
+"Python, SQL, pandas, machine learning",4,3903867896,"Data Engineer - Enterprise Data and Analytics, Human Resources Stream","python, sql",0.45129761145739977,1
+"Python, SQL, pandas, machine learning",5,3905255326,Information Technology Specialist,"python, sql",0.39064580758285616,1
+"Python, scikit-learn, data science, statistics",1,3903867896,"Data Engineer - Enterprise Data and Analytics, Human Resources Stream",python,0.34954599568432887,1
+"Python, scikit-learn, data science, statistics",2,3904956273,Staff Data Engineer - People & Finance Tech (Remote),python,0.3417180705228239,1
+"Python, scikit-learn, data science, statistics",3,3901998589,"VP / Client, Finance & Strategy Data Scientist Lead – JPM Private Client",python,0.33892316814227114,1
+"Python, scikit-learn, data science, statistics",4,3906246896,Lead Software Engineer - Finance (Hybrid),python,0.3385062685462539,1
+"Python, scikit-learn, data science, statistics",5,3905255326,Information Technology Specialist,python,0.2694978672403701,1
+"SQL, Power BI, Excel, data analysis",1,3902861423,Information Technology Programmer,"data analysis, excel, power bi, sql",0.5931112911012741,1
+"SQL, Power BI, Excel, data analysis",2,3903867896,"Data Engineer - Enterprise Data and Analytics, Human Resources Stream","data analysis, sql",0.44287264329205056,1
+"SQL, Power BI, Excel, data analysis",3,3888031588,Vice President Finance,"data analysis, excel, power bi",0.4413000328862397,1
+"SQL, Power BI, Excel, data analysis",4,3902921025,Information Technology Developer,"excel, power bi, sql",0.4218270185224261,1
+"SQL, Power BI, Excel, data analysis",5,3895527225,Data Solutions Analyst II (Managed Care - Finance Focus) - R7269,"data analysis, power bi, sql",0.39128402777343063,1
+"Python, ETL, SQL, data engineering",1,3904956273,Staff Data Engineer - People & Finance Tech (Remote),"etl, python, sql",0.607486362354349,1
+"Python, ETL, SQL, data engineering",2,3903867896,"Data Engineer - Enterprise Data and Analytics, Human Resources Stream","etl, python, sql",0.5965484073839387,1
+"Python, ETL, SQL, data engineering",3,3901998589,"VP / Client, Finance & Strategy Data Scientist Lead – JPM Private Client","python, sql",0.4757469643636289,1
+"Python, ETL, SQL, data engineering",4,3906246896,Lead Software Engineer - Finance (Hybrid),"python, sql",0.46319635108091034,1
+"Python, ETL, SQL, data engineering",5,3895527225,Data Solutions Analyst II (Managed Care - Finance Focus) - R7269,"etl, python, sql",0.42741220985604866,1
+"Python, machine learning, NLP, natural language processing",1,3906246896,Lead Software Engineer - Finance (Hybrid),"machine learning, python",0.48906755183775996,1
+"Python, machine learning, NLP, natural language processing",2,3901998589,"VP / Client, Finance & Strategy Data Scientist Lead – JPM Private Client","machine learning, python",0.4787766279375604,1
+"Python, machine learning, NLP, natural language processing",3,3904956273,Staff Data Engineer - People & Finance Tech (Remote),python,0.33536865025360785,1
+"Python, machine learning, NLP, natural language processing",4,3903867896,"Data Engineer - Enterprise Data and Analytics, Human Resources Stream",python,0.33382654340904905,1
+"Python, machine learning, NLP, natural language processing",5,3905255326,Information Technology Specialist,python,0.2606199861230956,0
